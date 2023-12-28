@@ -43,12 +43,18 @@ List<int[]> getFlaggedCellsOnGameBoard()
     List<int[]> flaggedCells = new List<int[]>();
     foreach (var cell in cellsOnABoard)
     {
-        if (cell[0] == 4)
+        if (cell[0] == CellState.Flagged)//buradaki 4 'magic number' olarak adlandırılır.
         {
             flaggedCells.Add(cell);
         }
     }
     return flaggedCells;
+}
+
+public class CellState
+{
+    public const int Empty = 0;
+    public const int Flagged = 4;
 }
 
 
